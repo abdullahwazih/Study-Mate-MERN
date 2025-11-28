@@ -58,7 +58,7 @@ export default function Register() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#111]">
+        <div className="flex items-center justify-center bg-[#111] p-4 min-h-screen">
             <div className="max-w-4xl w-full grid md:grid-cols-2 bg-[#1b1b1b] rounded-xl shadow-lg overflow-hidden">
 
                 {/* Left side image */}

@@ -10,18 +10,19 @@ export default function Header({ isLoggedIn = false, userProfile }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-[rgba(0,0,0,0.95)] shadow-lg backdrop-blur-md">
+    <header className="fixed   top-0 w-full z-50 bg-[rgba(0,0,0,0.95)] shadow-lg backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 h-full">
 
           {/* Logo */}
-          <HeaderLogo />
+          <HeaderLogo className="h-8 w-auto" />
 
           {/* Desktop Navigation */}
-          <DesktopNav isLoggedIn={isLoggedIn} />
+          <DesktopNav className="h-16" isLoggedIn={isLoggedIn} />
 
           {/* Right Section */}
           <RightSection
+            className="h-16"
             isLoggedIn={isLoggedIn}
             userProfile={userProfile}
             dropdownOpen={dropdownOpen}
@@ -30,7 +31,8 @@ export default function Header({ isLoggedIn = false, userProfile }) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition"
+          
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition h-16"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

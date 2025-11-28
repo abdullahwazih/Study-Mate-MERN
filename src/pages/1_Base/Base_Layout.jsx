@@ -1,20 +1,23 @@
-import React from 'react'
-import { Outlet } from 'react-router'
-import Header from './Components/Header/Nav_Bar'
-import Footer from './Components/Footer/Footer'
+import React from 'react';
+import { Outlet } from 'react-router';
+import Header from './Components/Header/Nav_Bar';
+import Footer from './Components/Footer/Footer';
 
 const BaseLayout = () => {
     return (
-        <div className="min-h-screen" style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
+        <div className="flex flex-col min-h-screen bg-black">
+            {/* Fixed Header */}
             <Header />
-            <main className='pt-24'>
-                <Outlet />
 
+            {/* Scrollable content */}
+            <main className="flex-1 overflow-auto pt-16">
+                <Outlet />
             </main>
+
+            {/* Footer at bottom */}
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-
-export default BaseLayout
+export default BaseLayout;
